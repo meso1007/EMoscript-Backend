@@ -80,11 +80,14 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "corsheaders.middleware.CorsMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 CORS_ALLOWED_ORIGINS = [
     "https://www.emoscript.com",
-    '127.0.0.1', 'localhost'
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
 ]
 
 REST_FRAMEWORK = {
