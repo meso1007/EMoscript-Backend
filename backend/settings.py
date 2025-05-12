@@ -88,6 +88,8 @@ CORS_ALLOWED_ORIGINS = [
     "https://www.emoscript.com",
     'http://127.0.0.1:8000',
     'http://localhost:8000',
+    "https://emoscript-backend.onrender.com",
+
 ]
 
 REST_FRAMEWORK = {
