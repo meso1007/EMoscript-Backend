@@ -69,23 +69,22 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",  # セッションミドルウェアが先に来る
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",  # CSRFミドルウェアがセッションの後
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
-
 ]
-CSRF_COOKIE_SECURE = False
-CSRF_COOKIE_SAMESITE = 'None'
 
+SESSION_COOKIE_AGE = 3600  # セッションの有効期限（秒）
+SESSION_COOKIE_SAMESITE = 'None'  # セッションのクロスオリジン設定
+SESSION_COOKIE_SECURE = True  # HTTPS 使用時はセキュアクッキーを有効にする
 
 CORS_ALLOWED_ORIGINS = [
     "https://www.emoscript.com",
