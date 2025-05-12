@@ -19,6 +19,4 @@ urlpatterns = [
     path('admin/users/<int:user_id>/delete/', delete_user, name='delete_user'),
     path('payment-intent/', create_payment_intent, name='create-payment-intent'),
     path('activate-premium/', activate_premium, name='activate_premium'),
-
-
 ]
