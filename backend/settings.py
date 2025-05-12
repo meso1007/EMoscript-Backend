@@ -83,6 +83,9 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SAMESITE = 'None'
+
 
 CORS_ALLOWED_ORIGINS = [
     "https://www.emoscript.com",
